@@ -1,0 +1,39 @@
+% MATLAB style psudo code
+% 10 city example
+
+call executable to generate scores
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+C program to generate and score every solution
+
+void JohnsonTrotterAlgorithm(number of cities,xy coords of cities){
+init city map with arguments for number of cities and xy coordinates
+init first permutation as <1 <2 <3... <n // all directions are set to left
+
+while there is still a mobile city{
+    score curent permutation and write to disk
+    generate next permutation by swaping largest mobile city
+    find the next mobile city
+}//end while
+
+score last permutation and write to disk
+}// end JohnsonTrotterAlgorithm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% load scores and put them in a square matrix
+scores = 10!x1 matrix of scores to all solutions
+square = 1900x1900 matrix of scores
+
+% generate the large features of the landscape
+bucket = square with sections of 100x100 rotated randomly
+bucket = rotate the entire matrix by ~90
+filtered_features = gausian fillter applied to bucket, filter size: 40x40, sigma=300
+filtered_features = gausian fillter applied to filtered_features, filter size: 40x40, sigma=300
+
+% generate 'noise' to apply to the large features
+noise = square rotated ~90 with the sine rotate function
+noise = gausian fillter applied to square, filter size: 5x5, sigma=3
+noise = gausian fillter applied to noise, filter size: 5x5, sigma=3
+normalize nosise to -1 1 and scale to given scale factor
+
+sum the large_features matrix and the noise matrix
+
