@@ -1,7 +1,8 @@
 function out = rot( a,n )
-out=zeros(length(a));
+s=size(a);
+out=zeros(s(1),s(2));
 nn=n/37.5;
-for i=1:length(a)
+for i=1:s(1)
     % previoisly stable
     %out(i,:)=circshift(a(i,:),[0 int64(nn*(i+length(a)/2)*sin(i))]);
     
@@ -10,19 +11,4 @@ for i=1:length(a)
 
 end
 end
-
-% /function out = rotate( a,n )
-% out=zeros(100);
-% n=n/37.5;
-% for i=1:100
-%     
-%     out(i,:)=circshift(a(i,:),[0 int64(i*n)]); 
-% end
-% for i=1:100
-%     out(i,:)=smooth(out(i,:));
-% end
-% for i=1:100
-%     out(:,i)=smooth(out(:,i));
-% end
-% end
 

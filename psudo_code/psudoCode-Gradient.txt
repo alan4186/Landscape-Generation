@@ -1,0 +1,39 @@
+% MATLAB style psudo code
+% This is psudo code for the interactive vesion of the clustering/gradient method
+% 10 city example
+
+%call executable to generate scores
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+compute scores of all points using Johonson Trotter algorithm
+write scores to file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+space = resahpe all scores into rectangle
+
+% initialize gradients
+g1 = zero matrix the size of space
+g2 = zero matrix the size of space
+
+row = number of rows in space
+col = number of columns in space
+% use sections of space 100x20 to create gradients
+for i = 1:25:col-25
+    for j = 1:25: row-100
+        section = the scores at i,j to i+99,j+19
+        
+        randomly rotate section
+
+        randomly place rotated section in g1
+        with bottom left corner somewhere 
+        in range i,j to i+10,j+10
+        
+        randomly rotate section again
+
+        randomly place rotated section in g2
+        with bottom left corner somewhere 
+        in range i,j to i+10,j+10
+
+    end for j
+end for i
+
+landscape = integrate g1,g2 with poisson image editing
