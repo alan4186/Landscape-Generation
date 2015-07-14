@@ -1,0 +1,13 @@
+function s = read_10_city_file( file )
+Xmap=dlmread(file,' ',[0 0 0 9]);
+Ymap=dlmread(file,' ',[1 0 1 9]);
+raw=dlmread(file,' ',2, 0);
+
+
+s=struct('Xmap',Xmap,'Ymap',Ymap,'raw',raw,'square',square);
+
+
+%scape=imresize(scape(100:end-100,100:end-100),[64 64]);
+[s(:).scape]=deal(scape);
+end
+
